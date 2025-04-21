@@ -13,30 +13,30 @@ def factorial(n: int):
             raise ValueError(f"Факториал для {n} не поддерживается типом int")
     return result
 
-class TestFactorial(unittest.TestCase):
+class Testing(unittest.TestCase):
 
-    def test_factorial_of_zero(self):
+    def test_examine_zero(self):
         self.assertEqual(factorial(0), 1)
 
-    def test_factorial_of_positive_number(self):
-        self.assertEqual(factorial(5), 120)
-
-    def test_factorial_of_negative_number(self):
-        with self.assertRaises(ValueError):
-            factorial(-1)
-
-    def test_large_number(self):
-        with self.assertRaises(ValueError):
-            factorial(sys.maxsize)
-
-    def test_factorial_of_one(self):
+    def test_try_one(self):
         self.assertEqual(factorial(1), 1)
 
-    def test_factorial_of_two(self):
-        self.assertEqual(factorial(2), 2)
+    def test_simple_input(self):
+        self.assertEqual(factorial(5), 120)
 
-    def test_factorial_typical_number(self):
-        self.assertEqual(factorial(3), 6)
+    def test_check_negative(self):
+        with self.assertRaises(ValueError):
+            factorial(-5)
 
-if __name__ == "__main__":
+    def test_boundary_test(self):
+        self.assertEqual(factorial(10), 3628800)
+
+    def test_big_number(self):
+        with self.assertRaises(ValueError):
+            factorial(10000)
+
+    def test_regular_case(self):
+        self.assertEqual(factorial(7), 5040)
+
+if __name__ == '__main__':
     unittest.main()
