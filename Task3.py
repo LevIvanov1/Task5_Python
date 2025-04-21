@@ -15,27 +15,27 @@ def factorial(n: int):
 
 class Testing(unittest.TestCase):
 
-    def test_examine_zero(self):
+    def test_zero(self):
         self.assertEqual(factorial(0), 1)
 
-    def test_try_one(self):
+    def test_one(self):
         self.assertEqual(factorial(1), 1)
 
-    def test_simple_input(self):
+    def test_simple(self):
         self.assertEqual(factorial(5), 120)
 
-    def test_check_negative(self):
+    def test_checkMunis(self):
         with self.assertRaises(ValueError):
             factorial(-5)
 
-    def test_boundary_test(self):
+    def test_boundary(self):
         self.assertEqual(factorial(10), 3628800)
 
-    def test_big_number(self):
+    def test_bigNumber(self):
         with self.assertRaises(ValueError):
             factorial(10000)
 
-    def test_regular_case(self):
+    def test_regularCase(self):
         self.assertEqual(factorial(7), 5040)
 
 if __name__ == '__main__':
